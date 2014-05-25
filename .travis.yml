@@ -10,8 +10,8 @@ deploy:
     secure: EJ1z/EKSVPRxgLGQy+pW6kVzHTPWUM4Vhd/eGTA+kib80qH6BPhNZHSpzDJtSbc1VG5wwM2z3WVNhHwhtd9k3qk4yOTJwQQzLpHRbxQ34XU0+LT+rwe3W1/epFzsdD/ctguaBy5rqZXChiuSMeEw6ehbplbe36gn9HI0QhqEYRA=
   bucket: doyouevenpipe.io
   local-dir: build
-  endpint: doyouevenpipe.io.s3-website-us-east-1.amazonaws.com
-  region: 'US Standard'
+  endpint: doyouevenpipe.io.s3-website-us-east-1.amazonaws.com/
+  region: us-east-1
   skip_cleanup: true
   on:
     repo: smithamax/doyouevenpipe.io
