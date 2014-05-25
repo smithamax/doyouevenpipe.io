@@ -1,0 +1,14 @@
+###Node###
+
+node_modules
+build
+
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+npm-debug.log

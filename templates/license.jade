@@ -1,0 +1,4 @@
+
+mixin license(licenseName)
+  - var license = contents.licenses[licenseName + '.json']
+  a(rel='license' href=license.metadata.url)= license.metadata.name

@@ -1,0 +1,32 @@
+
+extends layout
+
+block append vars
+  - bodyclass = 'article-detail'
+
+block prepend title
+  | #{ page.title + " - "}
+
+block header
+  include author
+  h1= page.title
+  p.author
+    | #{ "Written by " }
+    mixin author(page.metadata.author)
+    span.date= ', ' + moment.utc(page.metadata.date).format('D MMMM YYYY')
+
+block content
+  article.article
+    section.content!= typogr(page.html).typogrify()
+
+block prepend footer
+  if page.metadata.license
+    include license
+    | #{ "This work by " }
+    mixin author(page.metadata.author)
+    | #{ " is licensed under a "}
+    mixin license(page.metadata.license)
+  div.nav
+    a(href=contents.index.url) « Full blog
+
+
