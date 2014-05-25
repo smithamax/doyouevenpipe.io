@@ -5,10 +5,17 @@
     "typogr": "0.5.x"
   },
   "scripts": {
-  	"build": "wintersmith build"
+    "build": "wintersmith build"
   },
-  "repository": "none",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/smithamax/doyouevenpipe.io"
+  },
   "devDependencies": {
     "wintersmith": "^2.0.10"
-  }
+  },
+  "name": "doyouevenpipe.io",
+  "description": "",
+  "author": "Dominic Smith",
+  "license": "CC"
 }
