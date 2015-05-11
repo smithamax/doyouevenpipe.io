@@ -5,14 +5,15 @@
     "typogr": "0.5.x"
   },
   "scripts": {
-    "build": "wintersmith build"
+    "build": "wintersmith build",
+    "start": "wintersmith preview"
   },
   "repository": {
     "type": "git",
     "url": "http://github.com/smithamax/doyouevenpipe.io"
   },
   "devDependencies": {
-    "wintersmith": "^2.0.10"
+    "wintersmith": "^2.1.0"
   },
   "name": "doyouevenpipe.io",
   "description": "",

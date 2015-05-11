@@ -2,27 +2,32 @@ extends layout
 
 block content
   include author
+  include license
+  
   each article in articles
-    article.article.intro
+    article
       header
-        p.date
-          span= moment.utc(article.date).format('DD. MMMM YYYY')
-        h2
+        h1
           a(href=article.url)= article.title
-      section.content
-        | !{ typogr(article.intro).typogrify() }
-        if article.hasMore
-          p.more
-            a(href=article.url) more
+        p
+          time= moment.utc(article.metadata.date).format('D MMMM YYYY')
+          | #{ " • "}
+          mixin author(article.metadata.author)
+          if article.metadata.license
+            | #{ " • " + article.metadata.license }
+          
+      main!= typogr(article.intro).typogrify()
+
+      footer
+        a(href=article.url) Read More
+            
 
 block prepend footer
-  div.nav
+  nav
     if prevPage
-      a(href=prevPage.url) « Newer
+      a(href=prevPage.url) Back
     else
-      a(href='/archive.html') « Archives
+      a(href='/archive.html') Archives
     if nextPage
-      a(href=nextPage.url) Next page »
-
-
-
+      | #{ " | "}
+      a(href=nextPage.url) Next
